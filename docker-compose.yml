@@ -1,0 +1,16 @@
+version: "3"
+
+services:
+  postgres:
+    image: "postgres:alpine"
+    environment:
+      POSTGRES_USER: magara
+      POSTGRES_PASSWORD: magara
+      POSTGRES_DB: magara_development
+    ports:
+    - "5432:5432"
+    networks:
+    - backend
+
+networks:
+  backend:
