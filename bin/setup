@@ -14,8 +14,8 @@ chdir APP_ROOT do
   system! 'gem install bundler --conservative'
   system('bundle check') || system!('bundle install --path vendor/bundle')
 
-  puts "\n == Precomile assets =="
-  system! 'bin/rails assets:precomile'
+  puts "\n== Precompile assets =="
+  system! 'bin/rails assets:precompile'
 
   puts "\n== Preparing database =="
   system! 'bin/rails db:setup'
