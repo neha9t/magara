@@ -1,0 +1,25 @@
+<%= form_with model: @house, local: true do |form| %>
+	<div class="form-row">
+		<div class="col">
+			<div class="form-group">
+				<%= form.label        :rent %>
+				<%= form.number_field :rent, class: "form-control" %>
+			</div>
+		</div>
+		<div class="col">
+			<div class="form-group">
+				<%= form.label        :deposit %>
+				<%= form.number_field :deposit, class: "form-control" %>
+			</div>
+		</div>
+	</div>
+
+	<div class="form-group">
+		<%= form.label  :preferred_gender %>
+		<%= form.select :preferred_gender, [['Either', 0],
+		                                    ['Female', 1],
+																				['Male', 2]], {}, class: "form-control" %>
+	</div>
+
+	<%= form.submit "Submit", class: "btn btn-primary" %>
+<% end %>

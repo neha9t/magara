@@ -1,0 +1,12 @@
+<h1>House ad</h1>
+
+<%= link_to "Edit", edit_house_path(@house), class: "btn btn-warning" %>
+<%= link_to "Delete", house_path(@house), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-danger" %>
+
+<p>
+	<b>Rent</b>: <%= @house.rent %> <br>
+	<b>Deposit</b>: <%= @house.deposit %> <br>
+	<b>Preferred gender</b>: <%= @house.preferred_gender %>
+</p>
+
+<%= link_to "Back", houses_path %>
