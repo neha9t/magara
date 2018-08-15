@@ -21,5 +21,40 @@
                                         ['Male', 2]], {}, class: "form-control" %>
   </div>
 
+  <%= form.fields_for :address do |address|  %>
+  <div class="form-grup">
+    <%= address.label      :address_1 %>
+    <%= address.text_field :address_1, class: "form-control" %>
+  </div>
+
+  <div class="form-grup">
+    <%= address.label      :address_2 %>
+    <%= address.text_field :address_2, class: "form-control" %>
+  </div>
+
+  <div class="form-row">
+    <div class="col">
+      <div class="form-group">
+        <%= address.label      :city %>
+        <%= address.text_field :city, class: "form-control" %>
+      </div>
+    </div>
+
+    <div class="col">
+      <div class="form-group">
+        <%= address.label      :state %>
+        <%= address.text_field :state, class: "form-control" %>
+      </div>
+    </div>
+
+    <div class="col">
+      <div class="form-group">
+        <%= address.label      :zip_code %>
+        <%= address.text_field :zip_code, class: "form-control" %>
+      </div>
+    </div>
+  </div>
+  <% end %>
+
   <%= form.submit "Submit", class: "btn btn-primary" %>
 <% end %>

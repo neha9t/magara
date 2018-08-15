@@ -10,6 +10,7 @@ class HousesController < ApplicationController
 
   def new
     @house = House.new
+    @house.build_address
   end
 
   def edit
@@ -51,6 +52,8 @@ class HousesController < ApplicationController
   end
 
   def house_params
-    params.require(:house).permit :rent, :deposit, :preferred_gender
+    params.require(:house).permit :rent, :deposit, :preferred_gender,
+                                  address_attributes: [:address_1, :address_2,
+                                                       :city, :state, :zip_code]
   end
 end

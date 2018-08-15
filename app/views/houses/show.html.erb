@@ -1,12 +1,31 @@
-<h1>House ad</h1>
+<div class="d-flex justify-content-between">
+  <div>
+    <h1>House ad</h1>
+  </div>
 
-<%= link_to "Edit", edit_house_path(@house), class: "btn btn-warning" %>
-<%= link_to "Delete", house_path(@house), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-danger" %>
+  <div>
+    <%= link_to "Edit", edit_house_path(@house), class: "btn btn-warning" %>
+    <%= link_to "Delete", house_path(@house), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-danger" %>
+  </div>
+</div>
 
-<p>
-  <b>Rent</b>: <%= @house.rent %> <br>
-  <b>Deposit</b>: <%= @house.deposit %> <br>
-  <b>Preferred gender</b>: <%= @house.preferred_gender %>
-</p>
+<div class="row">
+  <div class="col-12">
+    <div>
+      <h2>House </h2>
+      <b>Rent</b>: <%= @house.rent %> <br>
+      <b>Deposit</b>: <%= @house.deposit %> <br>
+      <b>Preferred gender</b>: <%= @house.preferred_gender %>
+    </div>
+
+    <div>
+      <h2>Address</h2>
+      <address>
+        <%= @house.address.address_1 %>,<%= @house.address.address_2 %><br>
+        <%= @house.address.city %> <%= @house.address.state %>, <%= @house.address.zip_code %>
+      </address>
+    </div>
+  </div>
+</div>
 
 <%= link_to "Back", houses_path %>
