@@ -1,0 +1,9 @@
+AllCops:
+  Exclude:
+  - 'bin/**/*'
+  - 'db/**/*'
+  - 'node_modules/**/*'
+  - 'vendor/**/*'
+
+Rails:
+  Enabled: true
