@@ -44,7 +44,7 @@ group :development do
 end
 
 group :test do
-  gem 'faker', '>= 1.9.1'
+  # gem 'faker', '>= 1.9.1'
   gem 'rubocop', '~> 0.58.2', require: false
 end
 
