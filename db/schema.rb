@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_08_14_071223) do
+ActiveRecord::Schema.define(version: 2018_08_16_053912) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -21,6 +21,22 @@ ActiveRecord::Schema.define(version: 2018_08_14_071223) do
     t.string "city", null: false
     t.string "state", null: false
     t.string "zip_code", null: false
+    t.integer "house_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "checkboxes", force: :cascade do |t|
+    t.boolean "air_conditioning"
+    t.boolean "balcony"
+    t.boolean "furnished"
+    t.boolean "include_utility"
+    t.boolean "pets_allowed"
+    t.boolean "private_bathroom"
+    t.boolean "private_bedroom"
+    t.boolean "refrigerator"
+    t.boolean "near_bus_line"
+    t.boolean "smoke_allowed"
     t.integer "house_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

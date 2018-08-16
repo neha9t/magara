@@ -11,6 +11,7 @@ class HousesController < ApplicationController
   def new
     @house = House.new
     @house.build_address
+    @house.build_checkbox
   end
 
   def edit
@@ -53,7 +54,17 @@ class HousesController < ApplicationController
 
   def house_params
     params.require(:house).permit :rent, :deposit, :preferred_gender,
-                                  address_attributes: [:address_1, :address_2,
-                                                       :city, :state, :zip_code]
+                                  address_attributes: [ :address_1, :address_2,
+                                                        :city, :state,
+                                                        :zip_code ],
+                                  checkbox_attributes: [ :air_conditioning,
+                                                         :balcony, :furnished,
+                                                         :include_utility,
+                                                         :pets_allowed,
+                                                         :private_bathroom,
+                                                         :private_bedroom,
+                                                         :refrigerator,
+                                                         :near_bus_line,
+                                                         :smoke_allowed ]
   end
 end

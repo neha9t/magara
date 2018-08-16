@@ -10,7 +10,7 @@
 </div>
 
 <div class="row">
-  <div class="col-12">
+  <div class="col-12 col-lg-6">
     <div>
       <h2>House </h2>
       <b>Rent</b>: <%= @house.rent %> <br>
@@ -25,6 +25,45 @@
         <%= @house.address.city %> <%= @house.address.state %>, <%= @house.address.zip_code %>
       </address>
     </div>
+  </div>
+
+  <div class="col-12 col-lg-6">
+    <h3>What does it have?</h3>
+    <table class="table">
+      <tr>
+        <th>Air conditioning</th>
+        <td><%= @house.checkbox.air_conditioning %></td>
+
+        <th>Balcony</th>
+        <td><%= @house.checkbox.balcony %></td>
+      </tr>
+      <tr>
+        <th>Include utility</th>
+        <td><%= @house.checkbox.include_utility %></td>
+
+        <th>Pets allowed</th>
+        <td><%= @house.checkbox.pets_allowed %></td>
+      </tr>
+      <tr>
+        <th>Private bathroom</th>
+        <td><%= @house.checkbox.private_bathroom %></td>
+
+        <th>Private bedroom</th>
+        <td><%= @house.checkbox.private_bedroom %></td>
+      </tr>
+      <tr>
+        <th>Refrigerator</th>
+        <td><%= @house.checkbox.refrigerator %></td>
+
+        <th>Near bus line</th>
+        <td><%= @house.checkbox.near_bus_line %></td>
+      </tr>
+
+      <tr>
+        <th>Smoke allowed</th>
+        <td><%= @house.checkbox.smoke_allowed %></td>
+      </tr>
+    </table>
   </div>
 </div>
 

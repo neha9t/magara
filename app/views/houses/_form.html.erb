@@ -56,5 +56,65 @@
   </div>
   <% end %>
 
+  <%= form.fields_for :checkbox do |checkbox|  %>
+  <div class="form-row">
+    <div class="col">
+      <%= checkbox.check_box :air_conditioning %>
+      <%= checkbox.label     :air_conditioning %>
+    </div>
+
+    <div class="col">
+      <%= checkbox.check_box :balcony %>
+      <%= checkbox.label     :balcony %>
+    </div>
+
+    <div class="col">
+      <%= checkbox.check_box :furnished %>
+      <%= checkbox.label     :furnished %>
+    </div>
+  </div>
+
+  <div class="form-row">
+    <div class="col">
+      <%= checkbox.check_box :include_utility %>
+      <%= checkbox.label     :include_utility %>
+    </div>
+
+    <div class="col">
+      <%= checkbox.check_box :pets_allowed %>
+      <%= checkbox.label     :pets_allowed %>
+    </div>
+
+    <div class="col">
+      <%= checkbox.check_box :private_bathroom %>
+      <%= checkbox.label     :private_bathroom %>
+    </div>
+  </div>
+
+  <div class="form-row">
+    <div class="col">
+      <%= checkbox.check_box :private_bedroom %>
+      <%= checkbox.label     :private_bedroom %>
+    </div>
+
+    <div class="col">
+      <%= checkbox.check_box :refrigerator %>
+      <%= checkbox.label     :refrigerator %>
+    </div>
+
+    <div class="col">
+      <%= checkbox.check_box :near_bus_line %>
+      <%= checkbox.label     :near_bus_line %>
+    </div>
+  </div>
+
+  <div class="form-row">
+    <div class="col">
+      <%= checkbox.check_box :smoke_allowed %>
+      <%= checkbox.label     :smoke_allowed %>
+    </div>
+  </div>
+  <% end %>
+
   <%= form.submit "Submit", class: "btn btn-primary" %>
 <% end %>
