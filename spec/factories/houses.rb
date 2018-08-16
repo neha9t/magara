@@ -1,8 +1,8 @@
 FactoryBot.define do
   factory :house do
-    rent             850
-    deposit          600
-    description      "Lorem ipsum dolor sit amet"
+    rent             Random.rand 400..1200
+    deposit          Random.rand 400..1200
+    description      "Lorem ipsum dolor sit amet."
     preferred_gender 0
 
     trait :either do
