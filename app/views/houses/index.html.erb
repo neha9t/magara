@@ -7,23 +7,22 @@
   </div>
 </div>
 
-<div class="table-responsive">
-  <table class="table table-striped">
-    <thead>
-      <tr>
-        <th>Rent</th>
-        <th>Deposit</th>
-        <th>Preferred gender</th>
-      </tr>
-    </thead>
-    <tbody>
-      <% @houses.each do |house| %>
-      <tr>
-        <td><%= link_to "$ #{house.rent}", house_path(house) %></td>
-        <td>$ <%= house.deposit %></td>
-        <td><%= house.preferred_gender %></td>
-      </tr>
-      <% end %>
-    </tbody>
-  </table>
+<div class="card-columns">
+  <% @houses.each do |house| %>
+  <a href="<%= house_path(house) %>" class="text-dark">
+    <div class="card">
+      <div class="card-body">
+        <p class="card-text">
+          <b>Rent</b>: $ <%= house.rent %><br>
+          <b>Deposit</b>: $ <%= house.deposit %>
+        </p>
+        <p class="card-text">
+          <b>Address</b>: <br>
+          <%= house.address.address_1 %> <%= house.address.address_2 %><br>
+          <%= house.address.city %> <%= house.address.state %>, <%= house.address.zip_code %>
+        </p>
+      </div>
+    </div>
+  </a>
+  <% end %>
 </div>
