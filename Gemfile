@@ -44,8 +44,9 @@ group :development do
 end
 
 group :test do
-  # gem 'faker', '>= 1.9.1'
-  gem 'rubocop', '~> 0.58.2', require: false
+  # gem 'faker',     '>= 1.9.1'
+  gem 'rubocop',   '~> 0.58.2', require: false
+  gem 'scss_lint', '~> 0.57.0', require: false
 end
 
 group :production do
