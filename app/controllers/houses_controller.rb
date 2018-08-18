@@ -5,8 +5,7 @@ class HousesController < ApplicationController
     @houses = House.all
   end
 
-  def show
-  end
+  def show; end
 
   def new
     @house = House.new
@@ -14,8 +13,7 @@ class HousesController < ApplicationController
     @house.build_checkbox
   end
 
-  def edit
-  end
+  def edit; end
 
   def create
     @house = House.new house_params
@@ -54,17 +52,17 @@ class HousesController < ApplicationController
 
   def house_params
     params.require(:house).permit :rent, :deposit, :preferred_gender,
-                                  address_attributes: [ :address_1, :address_2,
-                                                        :city, :state,
-                                                        :zip_code ],
-                                  checkbox_attributes: [ :air_conditioning,
-                                                         :balcony, :furnished,
-                                                         :include_utility,
-                                                         :pets_allowed,
-                                                         :private_bathroom,
-                                                         :private_bedroom,
-                                                         :refrigerator,
-                                                         :near_bus_line,
-                                                         :smoke_allowed ]
+                                  address_attributes: %i[address_1 address_2
+                                                         city state
+                                                         zip_code],
+                                  checkbox_attributes: %i[air_conditioning
+                                                          balcony furnished
+                                                          include_utility
+                                                          pets_allowed
+                                                          private_bathroom
+                                                          private_bedroom
+                                                          refrigerator
+                                                          near_bus_line
+                                                          smoke_allowed]
   end
 end

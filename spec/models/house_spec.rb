@@ -3,19 +3,19 @@ require 'rails_helper'
 RSpec.describe House do
   let(:house) { create(:house, :either) }
 
-  it "is valid" do
+  it 'is valid' do
     expect(house).to be_valid
   end
 
-  context "rent" do
-    it "is not valid without" do
+  context 'rent' do
+    it 'is not valid without' do
       house.rent = nil
-      expect(house).to_not be_valid
+      expect(house).not_to be_valid
     end
 
-    it "can not be negative" do
+    it 'can not be negative' do
       house.rent = -1
-      expect(house).to_not be_valid
+      expect(house).not_to be_valid
     end
 
     # BUG:
@@ -31,13 +31,13 @@ RSpec.describe House do
     #   expect(house).to_not be_valid
     # end
 
-    it "can not be zero" do
+    it 'can not be zero' do
       house.rent = 0
-      expect(house).to_not be_valid
+      expect(house).not_to be_valid
     end
   end
 
-  context "deposit" do
+  context 'deposit' do
     # BUG:
     #   1) House deposit is valid without
     #     Failure/Error: expect(house).to be_valid
@@ -51,9 +51,9 @@ RSpec.describe House do
     #   expect(house).to be_valid
     # end
 
-    it "can not be negative" do
+    it 'can not be negative' do
       house.deposit = -1
-      expect(house).to_not be_valid
+      expect(house).not_to be_valid
     end
 
     # XXX:
@@ -61,16 +61,16 @@ RSpec.describe House do
     #
     # it "can not be string"
 
-    it "can not be zero"  do
+    it 'can not be zero' do
       house.deposit = 0
-      expect(house).to_not be_valid
+      expect(house).not_to be_valid
     end
   end
 
-  context "preferred gender" do
-    it "is not valid without" do
+  context 'preferred gender' do
+    it 'is not valid without' do
       house.preferred_gender = nil
-      expect(house).to_not be_valid
+      expect(house).not_to be_valid
     end
 
     # XXX:
