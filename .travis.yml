@@ -23,7 +23,3 @@ jobs:
     script: bundle exec rspec
     after_script:
     - bundle exec rails db:drop
-  -
-    script: bundle exec rubocop
-  -
-    script: bundle exec scss-lint

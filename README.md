@@ -2,6 +2,7 @@
 
 ![Ruby version](https://img.shields.io/badge/Ruby-v2.5.1-green.svg)
 ![Rails version](https://img.shields.io/badge/Rails-v5.2.1-green.svg)
+[![Build status](https://travis-ci.com/BerkhanBerkdemir/magara.svg?branch=master)](https://travis-ci.com/BerkhanBerkdemir/magara)
 ![AGPL-3.0](https://img.shields.io/badge/license-AGPL--3.0-blue.svg)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](http://makeapullrequest.com)
 
