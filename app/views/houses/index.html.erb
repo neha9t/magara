@@ -22,6 +22,9 @@
           <%= house.address.city %> <%= house.address.state %>, <%= house.address.zip_code %>
         </p>
       </div>
+      <div class="card-footer">
+        <small class="text-muted"><%= distance_of_time_in_words_to_now(house.updated_at) %> ago updated</small>
+      </div>
     </div>
   </a>
   <% end %>
