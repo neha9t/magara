@@ -15,6 +15,6 @@ class Address < ApplicationRecord
   private
 
   def upcase_state
-    self.state.upcase!
+    state.upcase!
   end
 end

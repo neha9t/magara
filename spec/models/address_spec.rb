@@ -36,7 +36,7 @@ RSpec.describe Address do
 
   context 'zip code' do
     it 'should be valid with these zip codes' do
-      ["90001", "90403", "96054"].each do |zcode|
+      %w[90001 90403 96054].each do |zcode|
         address.zip_code = zcode
         expect(address).to be_valid
       end
@@ -47,24 +47,24 @@ RSpec.describe Address do
     # it 'should not be valid with there zip codes'
 
     it 'should not be valid with letters' do
-      address.zip_code = "SaMo3"
+      address.zip_code = 'SaMo3'
       expect(address).to_not be_valid
     end
   end
 
   context 'state' do
     it 'should be valid which it has only 2 chars' do
-      address.state = "CA"
+      address.state = 'CA'
       expect(address).to be_valid
     end
 
     it 'should not be valid which it does not have only 2 chars' do
-      address.state = "WSH"
+      address.state = 'WSH'
       expect(address).to_not be_valid
     end
 
     it 'should be capitiliazed after save' do
-      state_name = "ca"
+      state_name = 'ca'
 
       @address = create(:address, state: state_name, house: build(:house))
       expect(@address.state).to eq(state_name.upcase)
