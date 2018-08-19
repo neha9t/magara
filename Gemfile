@@ -2,6 +2,7 @@ source 'https://rubygems.org'
 
 gem 'bcrypt',       '~> 3.1.7'
 gem 'coffee-rails', '~> 4.2'
+gem 'high_voltage', '~> 3.1.0'
 gem 'jbuilder',     '~> 2.5'
 gem 'pg',           '>= 0.18', '< 2.0'
 gem 'puma',         '~> 3.11'
