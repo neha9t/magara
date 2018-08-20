@@ -23,10 +23,10 @@ module HousesHelper
   #   # => '&checkmark;'
   def check_it(value)
     value = case value
-    when true
-      '&checkmark;'
-    else
-      '&cross;'
+            when true
+              '&checkmark;'
+            else
+              '&cross;'
     end
 
     value.html_safe
