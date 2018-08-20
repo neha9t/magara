@@ -43,3 +43,7 @@ bundle exec rails s
 ## License
 
 This program is free software: you can redistribute it and/or modify it under the terms of the **GNU Affero General Public License** as published by the Free Software Foundation, **either version 3 of the License, or (at your option) any later version**. Please see the [LICENSE](LICENSE) file in our repository for the full text.
+
+Additionally, this program's wiki, `/docs` and other documentation pages are released under the [Creative Commons BY-SA 4.0][CC]
+
+[CC]: https://creativecommons.org/licenses/by-sa/4.0/legalcode.txt
