@@ -1,10 +1,5 @@
-<div class="d-flex justify-content-between">
-  <div>
-    <h1>Houses</h1>
-  </div>
-  <div>
-    <%= link_to "New house", new_house_path, class: "btn btn-primary" %>
-  </div>
+<div class="d-flex justify-content-end mb-3">
+  <div><%= link_to "New house", new_house_path, class: "btn btn-primary" %></div>
 </div>
 
 <div class="card-columns">
@@ -13,8 +8,8 @@
     <div class="card">
       <div class="card-body">
         <p class="card-text">
-          <b>Rent</b>: $ <%= house.rent %><br>
-          <b>Deposit</b>: $ <%= house.deposit %>
+          <b>Rent</b>: $ <%= house.rent.to_i %><br>
+          <b>Deposit</b>: $ <%= house.deposit.to_i %>
         </p>
         <p class="card-text">
           <b>Address</b>: <br>
@@ -23,7 +18,7 @@
         </p>
       </div>
       <div class="card-footer">
-        <small class="text-muted"><%= distance_of_time_in_words_to_now(house.updated_at) %> ago updated</small>
+        <small class="text-muted"><%= distance_of_time_in_words_to_now(house.created_at) %> ago created</small>
       </div>
     </div>
   </a>

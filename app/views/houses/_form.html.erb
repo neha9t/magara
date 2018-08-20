@@ -1,120 +1,121 @@
-<%= form_with model: @house, local: true do |form| %>
-  <div class="form-row">
-    <div class="col">
-      <div class="form-group">
-        <%= form.label        :rent %>
-        <%= form.number_field :rent, class: "form-control" %>
+<div class="col-12 col-lg-8 mx-auto">
+  <%= form_with model: @house, local: true do |form| %>
+    <div class="form-row">
+      <div class="col">
+        <div class="form-group">
+          <%= form.label        :rent %>
+          <%= form.number_field :rent, class: "form-control", required: true %>
+        </div>
       </div>
-    </div>
-    <div class="col">
-      <div class="form-group">
-        <%= form.label        :deposit %>
-        <%= form.number_field :deposit, class: "form-control" %>
-      </div>
-    </div>
-  </div>
-
-  <div class="form-group">
-    <%= form.label  :preferred_gender %>
-    <%= form.select :preferred_gender, [['Either', 0],
-                                        ['Female', 1],
-                                        ['Male', 2]], {}, class: "form-control" %>
-  </div>
-
-  <%= form.fields_for :address do |address|  %>
-  <div class="form-grup">
-    <%= address.label      :address_1 %>
-    <%= address.text_field :address_1, class: "form-control" %>
-  </div>
-
-  <div class="form-grup">
-    <%= address.label      :address_2 %>
-    <%= address.text_field :address_2, class: "form-control" %>
-  </div>
-
-  <div class="form-row">
-    <div class="col">
-      <div class="form-group">
-        <%= address.label      :city %>
-        <%= address.text_field :city, class: "form-control" %>
+      <div class="col">
+        <div class="form-group">
+          <%= form.label        :deposit %>
+          <%= form.number_field :deposit, class: "form-control" %>
+        </div>
       </div>
     </div>
 
-    <div class="col">
-      <div class="form-group">
-        <%= address.label      :state %>
-        <%= address.text_field :state, class: "form-control" %>
+    <div class="form-group">
+      <%= form.label  :preferred_gender %>
+      <%= form.select :preferred_gender, [['Either', 0], ['Female', 1],['Male', 2]], {}, class: "form-control" %>
+    </div>
+
+    <%= form.fields_for :address do |address|  %>
+    <div class="form-group">
+      <%= address.label      :address_1 %>
+      <%= address.text_field :address_1, class: "form-control", required: true %>
+    </div>
+
+    <div class="form-group">
+      <%= address.label      :address_2 %>
+      <%= address.text_field :address_2, class: "form-control" %>
+    </div>
+
+    <div class="form-row">
+      <div class="col">
+        <div class="form-group">
+          <%= address.label      :city %>
+          <%= address.text_field :city, class: "form-control", required: true %>
+        </div>
+      </div>
+
+      <div class="col">
+        <div class="form-group">
+          <%= address.label      :state %>
+          <%= address.text_field :state, class: "form-control", required: true %>
+        </div>
+      </div>
+
+      <div class="col">
+        <div class="form-group">
+          <%= address.label      :zip_code %>
+          <%= address.text_field :zip_code, class: "form-control", required: true %>
+        </div>
+      </div>
+    </div>
+    <% end %>
+
+    <%= form.fields_for :checkbox do |checkbox|  %>
+    <div class="form-row">
+      <div class="col">
+        <%= checkbox.check_box :air_conditioning %>
+        <%= checkbox.label     :air_conditioning %>
+      </div>
+
+      <div class="col">
+        <%= checkbox.check_box :balcony %>
+        <%= checkbox.label     :balcony %>
+      </div>
+
+      <div class="col">
+        <%= checkbox.check_box :furnished %>
+        <%= checkbox.label     :furnished %>
       </div>
     </div>
 
-    <div class="col">
-      <div class="form-group">
-        <%= address.label      :zip_code %>
-        <%= address.text_field :zip_code, class: "form-control" %>
+    <div class="form-row">
+      <div class="col">
+        <%= checkbox.check_box :include_utility %>
+        <%= checkbox.label     :include_utility %>
+      </div>
+
+      <div class="col">
+        <%= checkbox.check_box :pets_allowed %>
+        <%= checkbox.label     :pets_allowed %>
+      </div>
+
+      <div class="col">
+        <%= checkbox.check_box :private_bathroom %>
+        <%= checkbox.label     :private_bathroom %>
       </div>
     </div>
-  </div>
+
+    <div class="form-row">
+      <div class="col">
+        <%= checkbox.check_box :private_bedroom %>
+        <%= checkbox.label     :private_bedroom %>
+      </div>
+
+      <div class="col">
+        <%= checkbox.check_box :refrigerator %>
+        <%= checkbox.label     :refrigerator %>
+      </div>
+
+      <div class="col">
+        <%= checkbox.check_box :near_bus_line %>
+        <%= checkbox.label     :near_bus_line %>
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="col">
+        <%= checkbox.check_box :smoke_allowed %>
+        <%= checkbox.label     :smoke_allowed %>
+      </div>
+    </div>
+    <% end %>
+
+    <%= form.submit "Submit", class: "btn btn-primary" %>
+    <%= link_to "Cancel", houses_path, class: "btn btn-secondary" %>
   <% end %>
-
-  <%= form.fields_for :checkbox do |checkbox|  %>
-  <div class="form-row">
-    <div class="col">
-      <%= checkbox.check_box :air_conditioning %>
-      <%= checkbox.label     :air_conditioning %>
-    </div>
-
-    <div class="col">
-      <%= checkbox.check_box :balcony %>
-      <%= checkbox.label     :balcony %>
-    </div>
-
-    <div class="col">
-      <%= checkbox.check_box :furnished %>
-      <%= checkbox.label     :furnished %>
-    </div>
-  </div>
-
-  <div class="form-row">
-    <div class="col">
-      <%= checkbox.check_box :include_utility %>
-      <%= checkbox.label     :include_utility %>
-    </div>
-
-    <div class="col">
-      <%= checkbox.check_box :pets_allowed %>
-      <%= checkbox.label     :pets_allowed %>
-    </div>
-
-    <div class="col">
-      <%= checkbox.check_box :private_bathroom %>
-      <%= checkbox.label     :private_bathroom %>
-    </div>
-  </div>
-
-  <div class="form-row">
-    <div class="col">
-      <%= checkbox.check_box :private_bedroom %>
-      <%= checkbox.label     :private_bedroom %>
-    </div>
-
-    <div class="col">
-      <%= checkbox.check_box :refrigerator %>
-      <%= checkbox.label     :refrigerator %>
-    </div>
-
-    <div class="col">
-      <%= checkbox.check_box :near_bus_line %>
-      <%= checkbox.label     :near_bus_line %>
-    </div>
-  </div>
-
-  <div class="form-row">
-    <div class="col">
-      <%= checkbox.check_box :smoke_allowed %>
-      <%= checkbox.label     :smoke_allowed %>
-    </div>
-  </div>
-  <% end %>
-
-  <%= form.submit "Submit", class: "btn btn-primary" %>
-<% end %>
+</div>

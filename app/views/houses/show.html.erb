@@ -1,25 +1,21 @@
-<div class="d-flex justify-content-between">
+<div class="d-flex justify-content-end">
   <div>
-    <h1>House ad</h1>
-  </div>
-
-  <div>
-    <%= link_to "Edit", edit_house_path(@house), class: "btn btn-warning" %>
-    <%= link_to "Delete", house_path(@house), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-danger" %>
+    <%= link_to "Edit", edit_house_path(@house), class: "btn btn-outline-warning" %>
+    <%= link_to "Delete", house_path(@house), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-outline-danger" %>
   </div>
 </div>
 
-<div class="row">
+<div class="row mt-2">
   <div class="col-12 col-lg-6">
     <div>
-      <h2>House </h2>
-      <b>Rent</b>: <%= @house.rent %> <br>
-      <b>Deposit</b>: <%= @house.deposit %> <br>
-      <b>Preferred gender</b>: <%= @house.preferred_gender %>
+      <h2 class="text-center">Specification</h2>
+      <b>Rent</b>: $ <%= @house.rent.to_i %> <br>
+      <b>Deposit</b>: $ <%= @house.deposit.to_i %> <br>
+      <b>Preferred gender</b>: <%= int_to_gender(@house.preferred_gender) %>
     </div>
 
-    <div>
-      <h2>Address</h2>
+    <div class="mt-3">
+      <h2 class="text-center">Address</h2>
       <address>
         <%= @house.address.address_1 %>,<%= @house.address.address_2 %><br>
         <%= @house.address.city %> <%= @house.address.state %>, <%= @house.address.zip_code %>
@@ -28,40 +24,40 @@
   </div>
 
   <div class="col-12 col-lg-6">
-    <h3>What does it have?</h3>
+    <h3 class="text-center">What does it have?</h3>
     <table class="table">
       <tr>
         <th>Air conditioning</th>
-        <td><%= @house.checkbox.air_conditioning %></td>
+        <td><%= check_it(@house.checkbox.air_conditioning) %></td>
 
         <th>Balcony</th>
-        <td><%= @house.checkbox.balcony %></td>
+        <td><%= check_it(@house.checkbox.balcony) %></td>
       </tr>
       <tr>
         <th>Include utility</th>
-        <td><%= @house.checkbox.include_utility %></td>
+        <td><%= check_it(@house.checkbox.include_utility) %></td>
 
         <th>Pets allowed</th>
-        <td><%= @house.checkbox.pets_allowed %></td>
+        <td><%= check_it(@house.checkbox.pets_allowed) %></td>
       </tr>
       <tr>
         <th>Private bathroom</th>
-        <td><%= @house.checkbox.private_bathroom %></td>
+        <td><%= check_it(@house.checkbox.private_bathroom) %></td>
 
         <th>Private bedroom</th>
-        <td><%= @house.checkbox.private_bedroom %></td>
+        <td><%= check_it(@house.checkbox.private_bedroom) %></td>
       </tr>
       <tr>
         <th>Refrigerator</th>
-        <td><%= @house.checkbox.refrigerator %></td>
+        <td><%= check_it(@house.checkbox.refrigerator) %></td>
 
         <th>Near bus line</th>
-        <td><%= @house.checkbox.near_bus_line %></td>
+        <td><%= check_it(@house.checkbox.near_bus_line) %></td>
       </tr>
 
       <tr>
         <th>Smoke allowed</th>
-        <td><%= @house.checkbox.smoke_allowed %></td>
+        <td><%= check_it(@house.checkbox.smoke_allowed) %></td>
       </tr>
     </table>
   </div>
