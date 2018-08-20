@@ -1,0 +1,8 @@
+# Extensions
+*.md
+
+# Folders
+log/
+storage/
+tmp/
+vendor/

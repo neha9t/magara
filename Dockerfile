@@ -8,7 +8,8 @@ ENV RAILS_ENV=production \
 
 COPY . .
 
-RUN apk add --no-cache \
+RUN chown $(id -un):$(id -gn) -R ./ \
+    && apk add --no-cache \
             build-base tzdata postgresql-dev \
             nodejs yarn \
     && bundle --no-color \
