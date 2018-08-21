@@ -5,6 +5,7 @@
 [![Build status](https://travis-ci.com/BerkhanBerkdemir/magara.svg?branch=master)](https://travis-ci.com/BerkhanBerkdemir/magara)
 ![AGPL-3.0](https://img.shields.io/badge/license-AGPL--3.0-blue.svg)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](http://makeapullrequest.com)
+[![Open Source Helpers](https://www.codetriage.com/berkhanberkdemir/magara/badges/users.svg)](https://www.codetriage.com/berkhanberkdemir/magara)
 
 Welcome to the Mağara codebase. Let's build something awesome for students.
 
