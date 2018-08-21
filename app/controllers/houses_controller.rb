@@ -9,8 +9,6 @@ class HousesController < ApplicationController
 
   def new
     @house = House.new
-    @house.build_address
-    @house.build_checkbox
   end
 
   def edit; end
