@@ -23,3 +23,9 @@ jobs:
     script: bundle exec rspec
     after_script:
     - bundle exec rails db:drop
+  - env: TEST_TYPE=sa
+    script: bundle exec rubocop
+  - env: TEST_TYPE=sa
+    script: bundle exec scss-lint
+  allow_failures:
+  - env: TEST_TYPE=sa
