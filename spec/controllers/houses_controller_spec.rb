@@ -38,6 +38,7 @@ RSpec.describe HousesController do
         house: {
           rent: h.rent, deposit: h.deposit,
           preferred_gender: h.preferred_gender,
+          available_at: h.available_at,
           address_attributes: {
             address_1: a.address_1, address_2: a.address_2,
             city: a.city, state: a.state, zip_code: a.zip_code
