@@ -50,6 +50,7 @@ class HousesController < ApplicationController
 
   def house_params
     params.require(:house).permit :rent, :deposit, :preferred_gender,
+                                  :available_at,
                                   address_attributes: %i[address_1 address_2
                                                          city state
                                                          zip_code],
