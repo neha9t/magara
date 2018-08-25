@@ -42,6 +42,7 @@ end
 group :production do
   # Use Redis adapter to run Action Cable in production
   gem 'redis', '~> 4.0'
+  gem 'sidekiq', '~> 5.2.1'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
