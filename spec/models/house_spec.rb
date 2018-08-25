@@ -87,7 +87,7 @@ RSpec.describe House do
     end
 
     it 'is valid if time is today' do
-      house.available_at = Date.today
+      house.available_at = Time.zone.today
       expect(house).to be_valid
     end
 
