@@ -79,4 +79,21 @@ RSpec.describe House do
     # it "can not be integer which is string"
     # it "can not be text"
   end
+
+  context 'available at' do
+    it 'is not valid if time is past' do
+      house.available_at = 1.week.ago
+      expect(house).not_to be_valid
+    end
+
+    it 'is valid if time is today' do
+      house.available_at = Time.zone.today
+      expect(house).to be_valid
+    end
+
+    it 'is valid if time is future' do
+      house.available_at = 1.week.after
+      expect(house).to be_valid
+    end
+  end
 end

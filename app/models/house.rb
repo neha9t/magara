@@ -1,4 +1,6 @@
 class House < ApplicationRecord
+  require_dependency 'validators/at_future_validator.rb'
+
   has_one :address,  dependent: :destroy
   has_one :checkbox, dependent: :destroy
 
@@ -9,6 +11,7 @@ class House < ApplicationRecord
                                numericality: { greater_than: 0 }
   validates :deposit,          numericality: { greater_than: 0 }
   validates :preferred_gender, presence: true, inclusion: { in: 0..2 }
+  validates :available_at,     presence: true, at_future: true
 
   def address
     super || build_address

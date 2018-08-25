@@ -15,9 +15,20 @@
       </div>
     </div>
 
-    <div class="form-group">
-      <%= form.label  :preferred_gender %>
-      <%= form.select :preferred_gender, [['Either', 0], ['Female', 1],['Male', 2]], {}, class: "form-control" %>
+    <div class="form-row">
+      <div class="col-12 col-lg-6">
+        <div class="form-group">
+          <%= form.label  :preferred_gender %>
+          <%= form.select :preferred_gender, [['Either', 0], ['Female', 1],['Male', 2]], {}, class: "form-control" %>
+        </div>
+      </div>
+
+      <div class="col-12 col-lg-6">
+        <div class="form-group">
+          <%= form.label      :available_at %>
+          <%= form.date_field :available_at, class: "form-control", value: Date.today, required: true %>
+        </div>
+      </div>
     </div>
 
     <%= form.fields_for :address do |address|  %>

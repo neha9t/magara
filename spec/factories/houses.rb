@@ -3,6 +3,7 @@ FactoryBot.define do
     rent             { Random.rand 400..1200 }
     deposit          { Random.rand 400..1200 }
     description      { Faker::Lorem.sentence(3, true, 4) }
+    available_at     { 3.weeks.after }
     preferred_gender { 0 }
 
     trait :either do
