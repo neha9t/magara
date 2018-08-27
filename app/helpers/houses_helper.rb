@@ -31,4 +31,9 @@ module HousesHelper
 
     value.html_safe
   end
+
+  # TODO: DRY it. HousesController has same method.
+  def owner?
+    true if @house.user == current_user
+  end
 end
