@@ -1,9 +1,11 @@
+<% if owner? %>
 <div class="d-flex justify-content-end">
   <div>
     <%= link_to "Edit", edit_house_path(@house), class: "btn btn-outline-warning" %>
     <%= link_to "Delete", house_path(@house), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-outline-danger" %>
   </div>
 </div>
+<% end %>
 
 <div class="row mt-2">
   <div class="col-12 col-lg-6">

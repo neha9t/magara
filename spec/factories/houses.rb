@@ -5,6 +5,8 @@ FactoryBot.define do
     description      { Faker::Lorem.sentence(3, true, 4) }
     available_at     { 3.weeks.after }
     preferred_gender { 0 }
+    
+    association :user, factory: :user
 
     trait :either do
       preferred_gender { 0 }

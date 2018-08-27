@@ -7,7 +7,7 @@
     <title><%= "#{yield :title} | " if yield(:title).present? %>Magara</title>
     <%= csrf_meta_tags -%> <%= csp_meta_tag -%>
 
-    <%= stylesheet_link_tag    'application' -%>
+    <%= stylesheet_link_tag 'application' -%>
   </head>
   <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -75,6 +75,7 @@
       </div>
     </footer>
 
+    <% console if Rails.env.development? %>
     <%= javascript_include_tag 'application' -%>
   </body>
 </html>

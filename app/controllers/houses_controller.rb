@@ -1,5 +1,7 @@
 class HousesController < ApplicationController
+  before_action :authenticate_user!, except: %i[index show]
   before_action :set_house, only: %i[show edit update destroy]
+  before_action :owner?, only: %i[edit update destroy]
 
   def index
     @houses = House.all
@@ -15,6 +17,7 @@ class HousesController < ApplicationController
 
   def create
     @house = House.new house_params
+    @house.user = current_user
 
     if @house.save
       # TODO: Add success flash message
@@ -43,6 +46,11 @@ class HousesController < ApplicationController
   end
 
   private
+
+  # TODO: DRY it. HousesHelper has same method.
+  def owner?
+    true if @house.user == current_user
+  end
 
   def set_house
     @house = House.find params[:id]
