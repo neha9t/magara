@@ -1,10 +1,14 @@
 dist: trusty
 language: ruby
 rvm:
-- 2.4.1
+- 2.5.1
 
 bundler_args: --without production
-cache: bundler
+cache:
+ directories:
+ - /home/travis/.rvm/
+ - vendor/bundle/
+ - node_modules/
 
 env:
 - RAILS_ENV=test
