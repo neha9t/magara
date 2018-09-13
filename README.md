@@ -24,6 +24,8 @@ Mağara runs top of [Ruby on Rails](https://rubyonrails.org), and, for now, it d
 
 ## Getting started
 
+> :bulb: Psst, are you looking a guide that covers how to help Mağara? [Here we go](.github/CONTRIBUTING.md)!
+
 ### Prerequisites
 
 * [Ruby](https://www.ruby-lang.org/en/): Check out the Ruby version on the badge.
