@@ -7,6 +7,7 @@
     <title><%= "#{yield :title} | " if yield(:title).present? %>Magara</title>
     <%= csrf_meta_tags -%> <%= csp_meta_tag -%>
 
+    <%= favicon_link_tag -%>
     <%= stylesheet_link_tag "application" -%>
   </head>
   <body>
