@@ -14,7 +14,7 @@ Welcome to the Mağara codebase. Let's build something awesome for students.
 Mağara is a platform where college and university students find a house with ease. Important difference between other housing application, universities can install their on-premises servers, so they will not pay money to stupid installation, upgrade or uninstall fees. So, you have two chance to use Mağara.
 
 1. Use our self-hosted version
-2. Download and install on your on-premises server.
+2. Download and install on your on-premises server
 
 ## Codebase
 
@@ -25,6 +25,8 @@ Mağara runs top of [Ruby on Rails](https://rubyonrails.org), and, for now, it d
 ## Getting started
 
 > :bulb: Psst, are you looking a guide that covers how to help Mağara? [Here we go](.github/CONTRIBUTING.md)!
+
+> :bulb: Hey nerd, check out wiki page. You will find what you want.
 
 ### Prerequisites
 
