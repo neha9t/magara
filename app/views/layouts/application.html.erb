@@ -7,7 +7,7 @@
     <title><%= "#{yield :title} | " if yield(:title).present? %>Magara</title>
     <%= csrf_meta_tags -%> <%= csp_meta_tag -%>
 
-    <%= stylesheet_link_tag 'application' -%>
+    <%= stylesheet_link_tag "application" -%>
   </head>
   <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -22,7 +22,8 @@
           <ul class="navbar-nav ml-auto">
             <% if current_user %>
             <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="https://example.com" id="profileDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</a>
+              <%= link_to "Dropdown", root_path, class: "nav-link dropdown-toggle", id: "profileDropdown", data: { toggle: "dropdown" }, aria: { haspopup: "true", expanded: "false" } %>
+
               <div class="dropdown-menu dropdown-menu-right" aria-labelledby="profileDropdown">
                 <%= link_to "Edit profile", edit_user_registration_path, class: "dropdown-item" %>
                 <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
@@ -42,11 +43,12 @@
     </nav>
 
     <% if flash.present? %>
-    <div class="mt-3"> <!-- START flash -->
+    <div class="container mt-3"> <!-- START flash -->
       <% flash.each do |message_type, message| %>
       <% message_type = "warning" if message_type == "alert" %>
       <% message_type = "success" if message_type == "notice" %>
       <% message_type = "danger" if message_type == "error" %>
+
       <div class="alert alert-<%= message_type %> alert-dismissible fade show" role="alert">
         <%= message %>
         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
@@ -57,7 +59,7 @@
     </div> <!-- END flash -->
     <% end %>
 
-    <div class="container my-3 my-md-5">
+    <div class="container my-3">
       <%= yield -%>
     </div>
 
@@ -66,7 +68,7 @@
       <div class="container">
         <div class="d-flex justify-content-between">
           <small class="text-muted">
-            Copyright &copy; 2018 Berkhan Berkdemir All Rights Reserved.
+            Copyright &copy; 2018 Berkhan Berkdemir and <%= link_to "Mağara contributors", "https://github.com/BerkhanBerkdemir/magara/graphs/contributors" %>
           </small>
           <small>
             <%= link_to "GitHub", "https://github.com/BerkhanBerkdemir/magara" %>
@@ -76,6 +78,6 @@
     </footer>
 
     <% console if Rails.env.development? %>
-    <%= javascript_include_tag 'application' -%>
+    <%= javascript_include_tag "application" -%>
   </body>
 </html>
