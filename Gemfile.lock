@@ -42,6 +42,8 @@ GEM
       i18n (>= 0.7, < 2)
       minitest (~> 5.1)
       tzinfo (~> 1.1)
+    addressable (2.5.2)
+      public_suffix (>= 2.0.2, < 4.0)
     arel (9.0.0)
     ast (2.4.0)
     autoprefixer-rails (9.1.4)
@@ -66,6 +68,8 @@ GEM
     concurrent-ruby (1.0.5)
     connection_pool (2.2.2)
     crass (1.0.4)
+    css_parser (1.6.0)
+      addressable
     devise (4.5.0)
       bcrypt (~> 3.0)
       orm_adapter (~> 0.1)
@@ -83,11 +87,16 @@ GEM
     faker (1.9.1)
       i18n (>= 0.7)
     ffi (1.9.25)
+    foundation_emails (2.2.1.0)
     globalid (0.4.1)
       activesupport (>= 4.2.0)
     high_voltage (3.1.0)
+    htmlentities (4.3.4)
     i18n (1.1.0)
       concurrent-ruby (~> 1.0)
+    inky-rb (1.3.7.2)
+      foundation_emails (~> 2)
+      nokogiri
     jaro_winkler (1.5.1)
     jbuilder (2.7.0)
       activesupport (>= 4.2.0)
@@ -127,6 +136,14 @@ GEM
     pg (1.0.0)
     popper_js (1.14.3)
     powerpack (0.1.2)
+    premailer (1.11.1)
+      addressable
+      css_parser (>= 1.6.0)
+      htmlentities (>= 4.0.0)
+    premailer-rails (1.10.2)
+      actionmailer (>= 3, < 6)
+      premailer (~> 1.7, >= 1.7.9)
+    public_suffix (3.0.3)
     rack (2.0.5)
     rack-protection (2.0.3)
       rack
@@ -263,11 +280,13 @@ DEPENDENCIES
   factory_bot_rails (~> 4.10)
   faker (>= 1.9.1)
   high_voltage (~> 3.1.0)
+  inky-rb
   jbuilder (~> 2.5)
   jquery-rails (~> 4.3.3)
   listen (>= 3.0.5, < 3.2)
   passenger (= 5.3.4)
   pg (= 1.0.0)
+  premailer-rails
   rails (= 5.2.1)
   rails-controller-testing
   redis (~> 4.0)
@@ -285,4 +304,4 @@ DEPENDENCIES
   web-console (>= 3.3.0)
 
 BUNDLED WITH
-   1.16.3
+   1.16.4

@@ -12,9 +12,12 @@ gem 'sass-rails',   '~> 5.0'
 gem 'uglifier',     '>= 1.3.0'
 gem 'turbolinks',   '~> 5.2'
 
-# For bootstrap
+# Bootstrap
 gem 'bootstrap',    '~> 4.1.3'
 gem 'jquery-rails', '~> 4.3.3'
+# Foundation for Emails
+gem 'inky-rb', require: 'inky'
+gem 'premailer-rails' # Stylesheet inlining for email
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false

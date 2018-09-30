@@ -1,0 +1,24 @@
+<container class="header">
+  <spacer size="16"></spacer>
+
+  <row>
+    <columns>
+      <h1 class="text-center">Welcome to Mağara</h1>
+    </columns>
+  </row>
+
+  <spacer size="16"></spacer>
+</container>
+
+<container class="body-border">
+  <row>
+    <columns>
+
+      <p class="text-center">All you need to do is just confirm your email account with this beatiful large blue button</p>
+      <button class="large expand" href="<%= confirmation_url(@resource, confirmation_token: @token) %>">Confirm my account</button>
+
+    </columns>
+  </row>
+
+  <spacer size="16"></spacer>
+</container>
